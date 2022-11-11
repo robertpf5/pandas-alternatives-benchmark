@@ -1,7 +1,7 @@
 import pandas as pd
 
-class TestPandas:
 
+class TestPandas:
     def read_parquet(self, loc):
         self.data = pd.read_parquet(loc)
 
@@ -24,6 +24,6 @@ class TestPandas:
         value = self.data.groupby(group_col)[mean_col].mean()
         print(f"pandas group_by_mean {value}")
         return value
-    
+
     def exit(self):
         del self.data

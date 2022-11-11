@@ -1,7 +1,7 @@
 import dask.dataframe as dd
 
-class TestDask:
 
+class TestDask:
     def read_parquet(self, loc):
         self.data = dd.read_parquet(loc)
 

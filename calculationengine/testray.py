@@ -1,6 +1,7 @@
 import ray
-class TestRay:
 
+
+class TestRay:
     def read_parquet(self, loc):
         self.data = ray.data.read_parquet(loc)
 
@@ -15,7 +16,7 @@ class TestRay:
         return value
 
     def unique_len(self, col):
-        raise(Exception("Not supported"))
+        raise (Exception("Not supported"))
 
     def group_by_mean(self, group_col, mean_col):
         value = self.data.groupby(group_col).mean(mean_col)

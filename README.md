@@ -28,5 +28,5 @@ python -m pip install -r requirements.txt
 
 ```shell
 python main.py --parquet_file data/yellow_tripdata_2022-01.parquet --data_column trip_distance --groupby_column passenger_count --testing_tools pandas,dask,modin,ray
-python main.py --parquet_file data/data/area1.parquet --data_column X --groupby_column R --testing_tools pandas,dask,modin
+python main.py --parquet_file data/area1.parquet --data_column X --groupby_column R --testing_tools pandas,dask,modin
 ```
