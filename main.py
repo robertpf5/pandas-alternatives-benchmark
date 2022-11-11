@@ -4,12 +4,14 @@ from argparse import ArgumentParser
 
 
 def main():
-
+    """
+    Starts the benchmarking process with the given args
+    """
     parser = ArgumentParser()
-    parser.add_argument("-f", "--parquet_file", dest="parquet_file")
-    parser.add_argument("-d", "--data_column", dest="data_column")
-    parser.add_argument("-g", "--groupby_column", dest="groupby_column")
-    parser.add_argument("-t", "--testing_tools", dest="testing_tools")
+    parser.add_argument("-f", "--parquet_file", dest="parquet_file", required=True)
+    parser.add_argument("-d", "--data_column", dest="data_column", required=True)
+    parser.add_argument("-g", "--groupby_column", dest="groupby_column", required=True)
+    parser.add_argument("-t", "--testing_tools", dest="testing_tools", required=True)
     args = parser.parse_args()
     testing_tools = [
         f"Test{tool.capitalize()}"
@@ -26,6 +28,9 @@ def main():
 
 
 class DfBenchmark:
+    """
+    Runs calculations for different engines. Tracks the time taken on each calculation and prints it
+    """
     def __init__(self, parquet_file, data_column, groupby_column, testing_tools):
         self.timers = {}
         self.PARQUET_FILE = parquet_file
